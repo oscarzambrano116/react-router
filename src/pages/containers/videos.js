@@ -22,12 +22,26 @@ class Home extends Component {
     //   media
     // })
   }
+
   handleCloseModal = (event) => {
     // this.setState({
     //   modalVisible: false,
     // })
     this.props.actions.closeModal()
   }
+
+  componentDidMount() {
+    const {
+      location: {
+        search,
+      },
+    } = this.props;
+    if (search) {
+      const id = search.split('=');
+      this.handleOpenModal(id[1]);
+    }
+  }
+
   render() {
     return (
       <HandleError>
