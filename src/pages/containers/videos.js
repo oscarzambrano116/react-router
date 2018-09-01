@@ -12,21 +12,11 @@ import * as actions from '../../actions/index';
 import { bindActionCreators } from 'redux';
 
 class Home extends Component {
-  // state = {
-  //   modalVisible: false,
-  // }
   handleOpenModal = (id) => {
     this.props.actions.openModal(id)
-    // this.setState({
-    //   modalVisible: true,
-    //   media
-    // })
   }
 
   handleCloseModal = (event) => {
-    // this.setState({
-    //   modalVisible: false,
-    // })
     this.props.actions.closeModal()
   }
 
@@ -62,8 +52,6 @@ class Home extends Component {
                 <VideoPlayer
                   autoplay
                   id={this.props.modal.get('mediaId')}
-                  // src={this.state.media.src}
-                  // title={this.state.media.title}
                 />
               </Modal>
             </ModalContainer>
